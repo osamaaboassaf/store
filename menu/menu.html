@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Store</title>
+	<link rel="stylesheet" href="menu-style.css">
+	<link rel="shortcut icon" type="image/x-icon" href="icon.png"/>
+</head>
+<body>
+<div class="header">
+	<div class="side-nav">
+		<div class="user">
+			<img src="images/user.png" class="user-img">
+			<div>
+				<h2>Osama Assaf</h2>
+				<p>osama@xyz.com</p>
+			</div>
+		</div>
+
+		<ul class="option">
+			<li>
+				<a href="javascript:void(0);" onclick="changeContent('pants')">
+					<img src="images/pants.png">
+				</a>
+				<a href="javascript:void(0);" onclick="changeContent('pants')">
+					<p>Pants</p>
+				</a>
+			</li>
+
+			<li>
+				<a href="javascript:void(0);" onclick="changeContent('suit')">
+					<img src="images/suit.png">
+				</a>
+				<a href="javascript:void(0);" onclick="changeContent('suit')">
+					<p>Suits</p>
+				</a>
+			</li>
+			<li>
+				<a href="javascript:void(0);" onclick="changeContent('shirt')">
+					<img src="images/shirt.png">
+				</a>
+				<a href="javascript:void(0);" onclick="changeContent('shirt')">
+					<p>Shirt</p>
+				</a>
+			</li>
+			<li>
+				<a href="javascript:void(0);" onclick="changeContent('short')">
+					<img src="images/short.png">
+				</a>
+				<a href="javascript:void(0);" onclick="changeContent('short')">
+					<p>Short</p>
+				</a>
+			</li>
+			<li>
+				<a href="javascript:void(0);" onclick="changeContent('t-shirt')">
+					<img src="images/t-shirt.png">
+				</a>
+				<a href="javascript:void(0);" onclick="changeContent('t-shirt')">
+					<p>T-Shirt</p>
+				</a>
+			</li>
+			<li>
+				<a href="javascript:void(0);" onclick="changeContent('skirt')">
+					<img src="images/skirt.png">
+				</a>
+				<a href="javascript:void(0);" onclick="changeContent('skirt')">
+					<p>Skirt</p>
+				</a>
+			<li>
+				<img src="images/setting.png">
+				<p>Setting</p>
+			</li>
+		</ul>
+
+		<ul style="height: 10%;">
+			<li>
+				<a href="login.html"><img src="images/logout.png"></a>
+				<a href="login.html"><p>Logout</p></a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="page" id="page"></div>
+		
+
+</div>
+
+<script>
+function changeContent(contentType) {
+	var page = document.getElementById("page");
+	var content = "";
+
+	if (contentType === 'pants') {
+		content=`
+		<div class="image-container" id="image-container">
+			<div class="imgclass">
+				<img src="pants/1.png">
+				<p style="width: 100%;height:15%;"> this is a test </p>
+				<button type="button" class="imgbtn">Buy Now</button>
+			</div>
+			<div class="imgclass">
+		    	<img src="pants/2.png">
+		    	<p style="width: 100%;height:15%;"> this is a test </p>
+				<button type="button" class="imgbtn">Buy Now</button>
+		    </div>
+		    <div class="imgclass">
+		    	<img src="pants/3.png">
+		    	<p style="width: 100%;height:15%;"> this is a test </p>
+				<button type="button" class="imgbtn">Buy Now</button>
+		    </div>
+		    <div class="imgclass">
+		    	<img src="pants/4.png">
+		    	<p style="width: 100%;height:15%;"> this is a test </p>
+				<button type="button" class="imgbtn">Buy Now</button>
+		    </div>
+		    <div class="imgclass">
+		    	<img src="pants/5.png">
+		    	<p style="width: 100%;height:15%;"> this is a test </p>
+				<button type="button" class="imgbtn">Buy Now</button>
+		    </div>
+		    <div class="imgclass">
+		    	<img src="pants/6.png">
+		    	<p style="width: 100%;height:15%;"> this is a test </p>
+				<button type="button" class="imgbtn">Buy Now</button>
+		    </div>
+		    <div class="imgclass">
+		    	<img src="pants/7.png">
+		    	<p style="width: 100%;height:15%;"> this is a test </p>
+				<button type="button" class="imgbtn">Buy Now</button>
+		    </div>
+		    <div class="imgclass">
+		    	<img src="pants/8.png">
+		    	<p style="width: 100%;height:15%;"> this is a test </p>
+				<button type="button" class="imgbtn">Buy Now</button>
+		    </div>
+		    <div class="imgclass">
+		    	<img src="pants/9.png">
+		    	<p style="width: 100%;height:15%;"> this is a test </p>
+				<button type="button" class="imgbtn">Buy Now</button>
+		    </div>
+		    <div class="imgclass">
+		    	<img src="pants/10.png">
+		    	<p style="width: 100%;height:15%;"> this is a test </p>
+				<button type="button" class="imgbtn">Buy Now</button>
+		    </div>
+		</div>
+		`;
+	}
+
+	else if(contentType==='suit') {
+		content=`
+		<div class="image-container" id="image-container">
+			<div class="imgclass">
+				<img src="suit/1.png">
+				<p style="width: 100%;height:15%;"> this is a test </p>
+				<button type="button" class="imgbtn">Buy Now</button>
+			</div>
+			<div class="imgclass">
+		    	<img src="suit/2.png">
+		    	<p style="width: 100%;height:15%;"> this is a test </p>
+				<button type="button" class="imgbtn">Buy Now</button>
+		    </div>
+		    <div class="imgclass">
+		    	<img src="suit/3.png">
+		    	<p style="width: 100%;height:15%;"> this is a test </p>
+				<button type="button" class="imgbtn">Buy Now</button>
+		    </div>
+		    <div class="imgclass">
+		    	<img src="suit/4.png">
+		    	<p style="width: 100%;height:15%;"> this is a test </p>
+				<button type="button" class="imgbtn">Buy Now</button>
+		    </div>
+		    <div class="imgclass">
+		    	<img src="suit/5.png">
+		    	<p style="width: 100%;height:15%;"> this is a test </p>
+				<button type="button" class="imgbtn">Buy Now</button>
+		    </div>
+		    <div class="imgclass">
+		    	<img src="suit/6.png">
+		    	<p style="width: 100%;height:15%;"> this is a test </p>
+				<button type="button" class="imgbtn">Buy Now</button>
+		    </div>
+		    <div class="imgclass">
+		    	<img src="suit/7.png">
+		    	<p style="width: 100%;height:15%;"> this is a test </p>
+				<button type="button" class="imgbtn">Buy Now</button>
+		    </div>
+		    <div class="imgclass">
+		    	<img src="suit/8.png">
+		    	<p style="width: 100%;height:15%;"> this is a test </p>
+				<button type="button" class="imgbtn">Buy Now</button>
+		    </div>
+		    <div class="imgclass">
+		    	<img src="suit/9.png">
+		    	<p style="width: 100%;height:15%;"> this is a test </p>
+				<button type="button" class="imgbtn">Buy Now</button>
+		    </div>
+		    <div class="imgclass">
+		    	<img src="suit/10.png">
+		    	<p style="width: 100%;height:15%;"> this is a test </p>
+				<button type="button" class="imgbtn">Buy Now</button>
+		    </div>
+		</div>
+		`;
+	}
+	
+	page.innerHTML = content;
+}
+</script>
+
+<script>
+changeContent('pants');
+</script>
+
+</body>
+</html>
