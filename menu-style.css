@@ -4,20 +4,27 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-
-.header {
+body{
   width: 100%;
-  height: 100vh;
   background-image: url(background.png);
   background-position: center;
   background-size: cover;
   display: flex;
+  overflow-y: auto;
+}
+body::-webkit-scrollbar {
+  width: 15px;
+}
+body::-webkit-scrollbar-track{
+  background: rgba(255, 255, 255, 0.2);
+}
+body::-webkit-scrollbar-thumb{
+  background: linear-gradient(#9c88ff, #8c7ae6);
 }
 
 .side-nav {
   width: 8%;
-  height: 100%;
-  /*position: fixed;*/
+  height: 100vh;
   top: 0;
   left: 0;
   padding: 30px 15px;
@@ -26,7 +33,10 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  transition: width 0.5s;
+  transition: width 0.6s;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: sticky;
 }
 
 .user{
@@ -36,7 +46,7 @@
   width: 100%;
   height:10% ;
   font-size: 12px;
-  padding: 10px;
+  padding: 2%;
   border-radius: 8px;
   margin-left: auto;
   margin-right: auto;
@@ -58,15 +68,15 @@
   margin: auto;
 }
 
-
 .option {
   list-style: none;
-  padding: 0 15px;
-  height: 80%;
+  padding: 0 10%;
+  height: 90%;
+  justify-content: center;
 }
 
 ul li {
-  margin: 20px 0;
+  margin: 40% 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,12 +99,18 @@ ul li p {
 
 .side-nav:hover .user div{
   display: block;
+  width: 60%;
+  padding: 5%;
 }
 
 .side-nav:hover .user{
   width: 100%;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(5px);
+}
+
+.side-nav:hover .user img{
+  width: 25%;
 }
 
 .side-nav:hover ul li p{
@@ -106,10 +122,11 @@ ul li p {
 
 .side-nav:hover ul li{
   justify-content: flex-start;
+  margin: 20%;
 }
 
 .page{
-  width:75%; 
+  width:80%; 
   height: 100%; 
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(5px);
@@ -117,42 +134,32 @@ ul li p {
   display: flex;
   text-align: center;
   overflow-y: auto;
-}
-
-.image-container{
-  padding: auto;
-  text-align: center;
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  white-space: nowrap;
-  scrollbar-width: thin;
-  width: 100%;
-  height: auto;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-flow: wrap;
 }
 
-.image-container img {
-  width: 70%;
-  height:70%;
-  box-sizing: border-box;
-  object-fit: scale-down;
-}
 .imgclass{
-  width: 25%;
-  height:40%;
+  width: 250px;
+  height:350px;
   border-radius: 20px;
   margin: 20px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
   0 10px 10px rgba(0,0,0,0.22);
   transition: .4s;
   cursor: pointer;
+  overflow: hidden;
 }
 .imgclass:hover{
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
   0 3px 6px rgba(0,0,0,0.23);
   transition: translate(0px, -8px);
+}
+
+.imgclass img{
+  width: 70%;
+  height:70%;
+  box-sizing: border-box;
+  object-fit: scale-down;
 }
 
  @media screen and (max-width:1000px){
@@ -166,17 +173,6 @@ ul li p {
       width: 100%;
     }
   }
-
-
-.page::-webkit-scrollbar {
-  width: 15px;
-}
-.page::-webkit-scrollbar-track{
-  background: rgba(255, 255, 255, 0.2);
-}
-.page::-webkit-scrollbar-thumb{
-  background: linear-gradient(#9c88ff, #8c7ae6);
-}
 
 a{
   color: black;
@@ -196,3 +192,14 @@ a{
   border-bottom-right-radius: 20px;
   background: #cd84f1;
 }
+
+.side-nav::-webkit-scrollbar{
+  width: 15px;
+}
+.side-nav::-webkit-scrollbar-track{
+  background: rgba(255, 255, 255, 0.2);
+}
+.side-nav::-webkit-scrollbar-thumb{
+  background: linear-gradient(#9c88ff, #8c7ae6);
+}
+

@@ -109,6 +109,8 @@ a:hover {
   outline: none;
   border-style: none;
   border: 1px solid white;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+  0 10px 10px rgba(0,0,0,0.22);
 }
 .btn-box button{
   width: 100%;
@@ -117,6 +119,8 @@ a:hover {
   border: white;
   padding: 0.5rem 1.5rem;
 }
+
+
 
 .register {
   display: flex;

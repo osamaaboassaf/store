@@ -6,9 +6,9 @@
 	<title>Store</title>
 	<link rel="stylesheet" href="menu-style.css">
 	<link rel="shortcut icon" type="image/x-icon" href="icon.png"/>
+	
 </head>
 <body>
-<div class="header">
 	<div class="side-nav">
 		<div class="user">
 			<img src="images/user.png" class="user-img">
@@ -36,6 +36,7 @@
 					<p>Suits</p>
 				</a>
 			</li>
+
 			<li>
 				<a href="javascript:void(0);" onclick="changeContent('shirt')">
 					<img src="images/shirt.png">
@@ -44,6 +45,7 @@
 					<p>Shirt</p>
 				</a>
 			</li>
+
 			<li>
 				<a href="javascript:void(0);" onclick="changeContent('short')">
 					<img src="images/short.png">
@@ -52,6 +54,7 @@
 					<p>Short</p>
 				</a>
 			</li>
+
 			<li>
 				<a href="javascript:void(0);" onclick="changeContent('t-shirt')">
 					<img src="images/t-shirt.png">
@@ -60,6 +63,7 @@
 					<p>T-Shirt</p>
 				</a>
 			</li>
+
 			<li>
 				<a href="javascript:void(0);" onclick="changeContent('skirt')">
 					<img src="images/skirt.png">
@@ -68,149 +72,136 @@
 					<p>Skirt</p>
 				</a>
 			<li>
-				<img src="images/setting.png">
-				<p>Setting</p>
+				<a href="javascript:void(0);" onclick="changeContent('dress')">
+					<img src="images/skirt.png">
+				</a>
+				<a href="javascript:void(0);" onclick="changeContent('dress')">
+					<p>Dress</p>
+				</a>
 			</li>
-		</ul>
 
-		<ul style="height: 10%;">
 			<li>
 				<a href="index.html"><img src="images/logout.png"></a>
 				<a href="index.html"><p>Logout</p></a>
 			</li>
+
 		</ul>
 	</div>
 
 	<div class="page" id="page"></div>
-		
 
-</div>
-
-<script>
-function changeContent(contentType) {
-	var page = document.getElementById("page");
-	var content = "";
-
-	if (contentType === 'pants') {
-		content=`
-		<div class="image-container" id="image-container">
-			<div class="imgclass">
-				<img src="pants/1.png">
-				<p style="width: 100%;height:15%;"> this is a test </p>
-				<button type="button" class="imgbtn">Buy Now</button>
-			</div>
-			<div class="imgclass">
-		    	<img src="pants/2.png">
-		    	<p style="width: 100%;height:15%;"> this is a test </p>
-				<button type="button" class="imgbtn">Buy Now</button>
-		    </div>
-		    <div class="imgclass">
-		    	<img src="pants/3.png">
-		    	<p style="width: 100%;height:15%;"> this is a test </p>
-				<button type="button" class="imgbtn">Buy Now</button>
-		    </div>
-		    <div class="imgclass">
-		    	<img src="pants/4.png">
-		    	<p style="width: 100%;height:15%;"> this is a test </p>
-				<button type="button" class="imgbtn">Buy Now</button>
-		    </div>
-		    <div class="imgclass">
-		    	<img src="pants/5.png">
-		    	<p style="width: 100%;height:15%;"> this is a test </p>
-				<button type="button" class="imgbtn">Buy Now</button>
-		    </div>
-		    <div class="imgclass">
-		    	<img src="pants/6.png">
-		    	<p style="width: 100%;height:15%;"> this is a test </p>
-				<button type="button" class="imgbtn">Buy Now</button>
-		    </div>
-		    <div class="imgclass">
-		    	<img src="pants/7.png">
-		    	<p style="width: 100%;height:15%;"> this is a test </p>
-				<button type="button" class="imgbtn">Buy Now</button>
-		    </div>
-		    <div class="imgclass">
-		    	<img src="pants/8.png">
-		    	<p style="width: 100%;height:15%;"> this is a test </p>
-				<button type="button" class="imgbtn">Buy Now</button>
-		    </div>
-		    <div class="imgclass">
-		    	<img src="pants/9.png">
-		    	<p style="width: 100%;height:15%;"> this is a test </p>
-				<button type="button" class="imgbtn">Buy Now</button>
-		    </div>
-		    <div class="imgclass">
-		    	<img src="pants/10.png">
-		    	<p style="width: 100%;height:15%;"> this is a test </p>
-				<button type="button" class="imgbtn">Buy Now</button>
-		    </div>
-		</div>
-		`;
-	}
-
-	else if(contentType==='suit') {
-		content=`
-		<div class="image-container" id="image-container">
-			<div class="imgclass">
-				<img src="suit/1.png">
-				<p style="width: 100%;height:15%;"> this is a test </p>
-				<button type="button" class="imgbtn">Buy Now</button>
-			</div>
-			<div class="imgclass">
-		    	<img src="suit/2.png">
-		    	<p style="width: 100%;height:15%;"> this is a test </p>
-				<button type="button" class="imgbtn">Buy Now</button>
-		    </div>
-		    <div class="imgclass">
-		    	<img src="suit/3.png">
-		    	<p style="width: 100%;height:15%;"> this is a test </p>
-				<button type="button" class="imgbtn">Buy Now</button>
-		    </div>
-		    <div class="imgclass">
-		    	<img src="suit/4.png">
-		    	<p style="width: 100%;height:15%;"> this is a test </p>
-				<button type="button" class="imgbtn">Buy Now</button>
-		    </div>
-		    <div class="imgclass">
-		    	<img src="suit/5.png">
-		    	<p style="width: 100%;height:15%;"> this is a test </p>
-				<button type="button" class="imgbtn">Buy Now</button>
-		    </div>
-		    <div class="imgclass">
-		    	<img src="suit/6.png">
-		    	<p style="width: 100%;height:15%;"> this is a test </p>
-				<button type="button" class="imgbtn">Buy Now</button>
-		    </div>
-		    <div class="imgclass">
-		    	<img src="suit/7.png">
-		    	<p style="width: 100%;height:15%;"> this is a test </p>
-				<button type="button" class="imgbtn">Buy Now</button>
-		    </div>
-		    <div class="imgclass">
-		    	<img src="suit/8.png">
-		    	<p style="width: 100%;height:15%;"> this is a test </p>
-				<button type="button" class="imgbtn">Buy Now</button>
-		    </div>
-		    <div class="imgclass">
-		    	<img src="suit/9.png">
-		    	<p style="width: 100%;height:15%;"> this is a test </p>
-				<button type="button" class="imgbtn">Buy Now</button>
-		    </div>
-		    <div class="imgclass">
-		    	<img src="suit/10.png">
-		    	<p style="width: 100%;height:15%;"> this is a test </p>
-				<button type="button" class="imgbtn">Buy Now</button>
-		    </div>
-		</div>
-		`;
-	}
 	
-	page.innerHTML = content;
-}
-</script>
+
+	<script>
+		function changeContent(contentType) {
+			var page = document.getElementById("page");
+			var content = "";
+
+			var imageUrls = [];
+
+			if (contentType === 'pants'){
+		        imageUrls = ['pants/1.png', 'pants/2.png', 'pants/3.png', 'pants/4.png'];
+		    }
+
+			if(contentType==='suit'){
+				imageUrls = ['suit/1.png', 'suit/2.png', 'suit/3.png', 'suit/4.png'];
+				
+			}
+
+			if(contentType==='shirt'){
+			}
+
+			if(contentType==='short'){
+			}
+
+			if(contentType==='t-shirt'){
+			}
+
+			if(contentType==='skirt'){
+			}
+
+			if(contentType==='dress'){
+			}
+			
+
+			for (var i = 0; i < imageUrls.length; i++) {
+		        content += `
+		            <div class="imgclass">
+		                <img src="${imageUrls[i]}">
+		                <p style="width: 100%; height:15%;"> This is a test </p>
+		                <button type="button" class="imgbtn">Buy Now</button>
+		            </div>
+		        `;
+		    }
+
+			page.innerHTML = content;
+		}
+	</script>
+
+	<script>
+		changeContent('pants');
+	</script>
 
 <script>
-changeContent('pants');
+let page = 1;
+const perPage = 2;
+let loading = false;
+let allImagesLoaded = false;
+
+const imageadding = document.getElementById("page");
+
+function fetchAdditionalContent() {
+    if (allImagesLoaded || loading) {
+        return;
+    }
+
+    loading = true;
+
+    setTimeout(() => {
+        for (let i = 1; i <= perPage; i++) {
+            const imgClass = document.createElement("div");
+            imgClass.className = "imgclass";
+
+            const imageUrl = `pants/${(page - 1) * perPage + i}.png`;
+
+            const imgElement = new Image();
+            imgElement.src = imageUrl;
+
+            imgElement.onload = function () {
+                imgClass.appendChild(imgElement);
+                imgClass.innerHTML += `
+                    <p style="width: 100%;height:15%;"> This is a test</p>
+                    <button type="button" class="imgbtn">Buy Now</button>
+                `;
+
+                imageadding.appendChild(imgClass);
+            };
+
+            imgElement.onerror = function () {
+                allImagesLoaded = true;
+                loading = false;
+            };
+        }
+
+        page++;
+        loading = false;
+    }, 1000);
+}
+
+function handleScroll() {
+    const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
+
+    if (scrollTop + clientHeight >= scrollHeight - 10 && !loading) {
+        fetchAdditionalContent();
+    }
+}
+
+
+window.addEventListener("scroll", handleScroll);
+
+// Initial load
+fetchAdditionalContent();
+
 </script>
 
 </body>
