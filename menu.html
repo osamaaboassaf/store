@@ -18,94 +18,81 @@
 			</div>
 		</div>
 
-		<ul class="option">
-			<li>
-				<a href="javascript:void(0);" onclick="changeContent('pants')">
-					<img src="images/pants.png">
-				</a>
-				<a href="javascript:void(0);" onclick="changeContent('pants')">
-					<p>Pants</p>
-				</a>
-			</li>
-
-			<li>
-				<a href="javascript:void(0);" onclick="changeContent('suit')">
-					<img src="images/suit.png">
-				</a>
-				<a href="javascript:void(0);" onclick="changeContent('suit')">
-					<p>Suits</p>
-				</a>
-			</li>
-
-			<li>
-				<a href="javascript:void(0);" onclick="changeContent('shirt')">
-					<img src="images/shirt.png">
-				</a>
-				<a href="javascript:void(0);" onclick="changeContent('shirt')">
-					<p>Shirt</p>
-				</a>
-			</li>
-
-			<li>
-				<a href="javascript:void(0);" onclick="changeContent('short')">
-					<img src="images/short.png">
-				</a>
-				<a href="javascript:void(0);" onclick="changeContent('short')">
-					<p>Short</p>
-				</a>
-			</li>
-
-			<li>
-				<a href="javascript:void(0);" onclick="changeContent('t-shirt')">
-					<img src="images/t-shirt.png">
-				</a>
-				<a href="javascript:void(0);" onclick="changeContent('t-shirt')">
-					<p>T-Shirt</p>
-				</a>
-			</li>
-
-			<li>
-				<a href="javascript:void(0);" onclick="changeContent('skirt')">
-					<img src="images/skirt.png">
-				</a>
-				<a href="javascript:void(0);" onclick="changeContent('skirt')">
-					<p>Skirt</p>
-				</a>
-			<li>
-				<a href="javascript:void(0);" onclick="changeContent('dress')">
-					<img src="images/skirt.png">
-				</a>
-				<a href="javascript:void(0);" onclick="changeContent('dress')">
-					<p>Dress</p>
-				</a>
-			</li>
-
-			<li>
-				<a href="index.html"><img src="images/logout.png"></a>
-				<a href="index.html"><p>Logout</p></a>
-			</li>
-
-		</ul>
+		<ul class="option" id="option"></ul>
+		
 	</div>
 
 	<div class="page" id="page"></div>
 
-	
+	<div id="loading" style="display: none; position: fixed; bottom: 0; width: 30%; background: #f0f0f0; text-align: center; padding: 10px;margin: 40%;margin-bottom: 0;background: transparent;">Loading...</div>
+
+
+	<script>
+    const clothingItems = [
+        { name: 'Pants', image: 'images/pants.png' },
+        { name: 'Suit', image: 'images/suit.png' },
+        { name: 'Shirt', image: 'images/shirt.png' },
+        {name: 'Short', image: 'images/short.png'},
+        {name: 'T-shirt', image: 'images/t-shirt.png'},
+        {name: 'Skirt', image: 'images/skirt.png'},
+        {name: 'Dress', image: 'images/dress.png'},
+        {name: 'logout', image: 'images/logout.png'},
+    ];
+
+    function createListItem(item) {
+        const listItem = document.createElement('li');
+
+        const link1 = document.createElement('a');
+        link1.href = "javascript:void(0);";
+        link1.onclick = function() { changeContent(item.name.toLowerCase()); };
+
+        const img = document.createElement('img');
+        img.src = item.image;
+
+        link1.appendChild(img);
+        listItem.appendChild(link1);
+
+        const link2 = document.createElement('a');
+        link2.href = "javascript:void(0);";
+        link2.onclick = function() { changeContent(item.name.toLowerCase()); };
+
+        const p = document.createElement('p');
+        p.textContent = item.name;
+
+        link2.appendChild(p);
+        listItem.appendChild(link2);
+
+
+        if (item.name.toLowerCase() == "logout") {
+        	link1.href = "index.html";
+        	link2.href = "index.html";
+        	p.textContent = 'Logout';
+        }
+        return listItem;
+    }
+
+    const optionList = document.getElementById('option');
+
+    clothingItems.forEach(item => {
+        const listItem = createListItem(item);
+        optionList.appendChild(listItem);
+    });
+</script>
 
 	<script>
 		function changeContent(contentType) {
 			var page = document.getElementById("page");
-			var content = "";
-
+			var content = "";		
 			var imageUrls = [];
 
 			if (contentType === 'pants'){
+				img_text = "pants"
 		        imageUrls = ['pants/1.png', 'pants/2.png', 'pants/3.png', 'pants/4.png'];
 		    }
 
 			if(contentType==='suit'){
-				imageUrls = ['suit/1.png', 'suit/2.png', 'suit/3.png', 'suit/4.png'];
-				
+				img_text = "suit"
+				imageUrls = ['suit/1.png', 'suit/2.png', 'suit/3.png', 'suit/10.png'];	
 			}
 
 			if(contentType==='shirt'){
@@ -122,47 +109,49 @@
 
 			if(contentType==='dress'){
 			}
-			
 
 			for (var i = 0; i < imageUrls.length; i++) {
 		        content += `
 		            <div class="imgclass">
 		                <img src="${imageUrls[i]}">
-		                <p style="width: 100%; height:15%;"> This is a test </p>
+		                <p style="width: 100%; height:15%;">this is a  ${img_text}</p>
 		                <button type="button" class="imgbtn">Buy Now</button>
 		            </div>
 		        `;
 		    }
 
 			page.innerHTML = content;
+
 		}
 	</script>
 
 	<script>
 		changeContent('pants');
-	</script>
+	</script>	
 
 <script>
 let page = 1;
-const perPage = 2;
+const perPage = 3;
 let loading = false;
 let allImagesLoaded = false;
+let currentContentType = 'pants';
 
 const imageadding = document.getElementById("page");
+
 
 function fetchAdditionalContent() {
     if (allImagesLoaded || loading) {
         return;
     }
-
     loading = true;
+	document.getElementById("loading").style.display = "block";
 
     setTimeout(() => {
         for (let i = 1; i <= perPage; i++) {
             const imgClass = document.createElement("div");
             imgClass.className = "imgclass";
 
-            const imageUrl = `pants/${(page - 1) * perPage + i}.png`;
+            const imageUrl = `${currentContentType}/${(page - 1) * perPage + i}.png`;
 
             const imgElement = new Image();
             imgElement.src = imageUrl;
@@ -170,7 +159,7 @@ function fetchAdditionalContent() {
             imgElement.onload = function () {
                 imgClass.appendChild(imgElement);
                 imgClass.innerHTML += `
-                    <p style="width: 100%;height:15%;"> This is a test</p>
+                    <p style="width: 100%;height:15%;"> this is a  ${img_text}</p>
                     <button type="button" class="imgbtn">Buy Now</button>
                 `;
 
@@ -181,6 +170,7 @@ function fetchAdditionalContent() {
                 allImagesLoaded = true;
                 loading = false;
             };
+            document.getElementById("loading").style.display = "none";
         }
 
         page++;
