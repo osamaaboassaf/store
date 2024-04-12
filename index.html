@@ -16,7 +16,17 @@
 		<div class="user">
 			<img src="images/user.png" class="user-img">
 			<div>
-				<h2>user</h2>
+				<h2 id="f_name"></h2>
+				<script>
+					var first_name = localStorage.getItem('user');
+
+					if (first_name == null) {
+						document.getElementById('f_name').textContent = 'user';
+					}
+					else {
+						document.getElementById('f_name').textContent = first_name;
+					}
+				</script>
 				<p></p>
 			</div>
 		</div>
@@ -154,6 +164,7 @@
 
 		<div class="page" id="page"></div>
 	</div>
+
 
 
 	<script>

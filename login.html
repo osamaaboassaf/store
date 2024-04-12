@@ -13,15 +13,15 @@
 </head>
 
 <body>
-	<main class="box">
-		<form action="" class="form" id="loginForm">
+	<div class="box" id="box">
+		<form action="" class="login_form" id="loginForm">
 			<h3>Login</h3>
 			<div class="username">
-				<input type="text" name="Username" placeholder="Username" id="username">
+				<input type="text" name="Username" placeholder="Username" id="log_name">
 				<ion-icon name="person"></ion-icon>
 			</div>
 			<div class="password">
-				<input type="password" name="Password" placeholder="Password" id="password">
+				<input type="password" name="Password" placeholder="Password" id="log_password">
 				<ion-icon name="lock-closed"></ion-icon>
 			</div>
 
@@ -39,30 +39,93 @@
 
 			<div class="register">
 				<p>Don't have an account?
-					<a href="" target="_blank">
+					<a href="#" onclick="change_form('register')">
 						<span>Register</span>
 					</a>
 				</p>
 			</div>
 		</form>
-	</main>
+	</div>
 
 
+	<form action="" class="signin_form" id="signinForm">
+		<h3>Sign In</h3>
+		<div class="username">
+			<input type="text" name="Username" placeholder="Username" id="sign_name">
+			<ion-icon name="person"></ion-icon>
+		</div>
+		<div class="password">
+			<input type="password" name="Password" placeholder="Password" id="sign_password">
+			<ion-icon name="lock-closed"></ion-icon>
+		</div>
+
+		<div class="buttons">
+			<div class="remember">
+				<input type="checkbox" class="checkbox">
+				<p>Remember me</p>
+			</div>
+		</div>
+
+		<div class="btn-box">
+			<button type="submit">Sign In</button>
+		</div>
+
+		<div class="register">
+			<p>Do have an account?
+				<a href="#" onclick="change_form('log')">
+					<span>Log In</span>
+				</a>
+			</p>
+		</div>
+	</form>
+
+
+	<script>
+		function change_form(contentType) {
+			var login = document.getElementById('loginForm');
+			var signin = document.getElementById('signinForm');
+
+			// Toggle the visibility of the login and registration forms
+			if (contentType === 'register') {
+				login.style.display = 'none';
+				signin.style.display = 'block';
+			}
+			if (contentType === 'log') {
+				login.style.display = 'block';
+				signin.style.display = 'none';
+			}
+		}
+	</script>
 
 	<script>
 		document.getElementById('loginForm').addEventListener('submit', function (event) {
 			event.preventDefault();
 
-			var username = document.getElementById('username').value;
-			var password = document.getElementById('password').value;
+			var username = document.getElementById('log_name').value;
+			var password = document.getElementById('log_password').value;
 
-			//if (!username == "" && !password == "") {
+			var loc_name = localStorage.getItem('user');
+			var loc_password = localStorage.getItem('pass');
+
+			if (loc_name == username && loc_password == password) {
+				window.location.href = 'index.html';
+			} else {
+				alert("wrong user name")
+			}
+		});
+	</script>
+
+	<script>
+		document.getElementById('signinForm').addEventListener('submit', function (event) {
+			event.preventDefault();
+
+			var user = document.getElementById('sign_name').value;
+			var pass = document.getElementById('sign_password').value;
+
+			localStorage.setItem('user', user);
+			localStorage.setItem('pass', pass);
+
 			window.location.href = 'index.html';
-			//	}
-			/*
-			else{
-				alert("input user name and password");
-			}*/
 
 		});
 	</script>

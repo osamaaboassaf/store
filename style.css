@@ -18,10 +18,9 @@ body{
 
 .box{
   padding-top: 20vh;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
 
-.form{
+.login_form{
   width: 350px;
   height: 400px;
   margin: 0 auto;
@@ -29,6 +28,7 @@ body{
   box-shadow: 2px 2px 100px #0e032f 
   -2px -2px 100px #0a0222;
   backdrop-filter: blur(3px);
+  display: block;
 }
 
 h3{
@@ -127,4 +127,15 @@ a:hover {
   justify-content: center;
   font-style: 0.75rem;
   margin-top: 3rem;
+}
+
+.signin_form {
+  width: 350px;
+  height: 400px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 2px 2px 100px #0e032f 
+  -2px -2px 100px #0a0222;
+  backdrop-filter: blur(3px);
+  display: none;
 }
